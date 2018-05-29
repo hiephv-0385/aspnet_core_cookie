@@ -20,7 +20,7 @@ namespace aspNetCoreCookie.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            if (!IsAuthentic(model.Username, model.Password))
+            if (!IsAuthenticated(model.Username, model.Password))
                 return View();
 
             // create claims
@@ -62,7 +62,7 @@ namespace aspNetCoreCookie.Controllers
             return View();
         }
 
-        private bool IsAuthentic(string username, string password)
+        private bool IsAuthenticated(string username, string password)
         {
             return (username == "hiephv" && password == "admin123");
         }
